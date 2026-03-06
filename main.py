@@ -8,8 +8,9 @@ from backend import Backend
 app = QGuiApplication(sys.argv)
 
 engine = QQmlApplicationEngine()
+engine.addImportPath(sys.path[0])
 engine.quit.connect(app.quit)
-engine.load("Main.qml")
+engine.loadFromModule("UI", "Main")
 
 backend = Backend()
 
