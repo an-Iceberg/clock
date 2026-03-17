@@ -16,5 +16,8 @@ backend = Backend()
 
 engine.rootObjects()[0].setProperty("backend", backend)
 
+# This prevents the time showing 00:00:00 for a split second on app start.
+backend.update_time()
+
 exit_code = app.exec()
 sys.exit(exit_code)
